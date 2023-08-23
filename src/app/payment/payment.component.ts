@@ -44,7 +44,7 @@ export class PaymentComponent implements OnInit {
     this.f.reset();
     const apiUrl = 'http://localhost:8082/purchaseContent';
     const params = {
-      userId: '1',
+      userId: '28',
       videoId: this.selectedPayVideo.videoId,
     };
 

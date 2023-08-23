@@ -87,7 +87,7 @@ export class RentComponent implements OnInit {
     console.log('URL ', vidElement);
 
     const apiUrl = 'http://localhost:8082/isEligible';
-    const queryParams = { userId: '1', videoId: vidElement.videoId }; // Assuming you have a video ID to send
+    const queryParams = { userId: '28', videoId: vidElement.videoId }; // Assuming you have a video ID to send
 
     this.http.get(apiUrl, { params: queryParams }).subscribe(
       (response: any) => {
