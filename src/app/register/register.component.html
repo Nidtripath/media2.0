@@ -1,0 +1,120 @@
+<!-- <body>
+  <div class="wrapper">
+    <h1>Register</h1>
+    <div class="input-box">
+      <input type="text" placeholder="Username" required />
+    </div>
+    <div class="input-box">
+      <input type="password" placeholder="Password" required />
+    </div>
+    <div class="input-box">
+      <input type="text" placeholder="emailId" />
+    </div>
+    <div class="input-box">
+      <input type="text" placeholder="employeeId" />
+    </div>
+    <div class="submit-btn">
+      <button type="submit">Register</button>
+    </div>
+  </div>
+</body> -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card">
+        <div class="text-center">
+          <h1>Sign Up</h1>
+          <h6>Register Yourself !!</h6>
+        </div>
+        <h2>Register</h2>
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+          <div class="form-group">
+            <label for="userName">Username</label>
+            <input
+              type="text"
+              formControlName="userName"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['userName'].errors }"
+            />
+            <div
+              *ngIf="submitted && f['userName'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['userName'].errors['required']">
+                Username is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="lastName">EmployeeId</label>
+            <input
+              type="number"
+              formControlName="employeeId"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['employeeId'].errors }"
+            />
+            <div
+              *ngIf="submitted && f['employeeId'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['employeeId'].errors['required']">
+                Employee Id is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              type="text"
+              formControlName="emailId"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['emailId'].errors }"
+            />
+            <div
+              *ngIf="submitted && f['emailId'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['emailId'].errors['required']">
+                Email is required
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              type="password"
+              formControlName="password"
+              class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['password'].errors }"
+            />
+            <div
+              *ngIf="submitted && f['password'].errors"
+              class="invalid-feedback"
+            >
+              <div *ngIf="f['password'].errors['required']">
+                Password is required
+              </div>
+              <div *ngIf="f['password'].errors['minlength']">
+                Password must be at least 6 characters
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <button [disabled]="loading" class="btn btn-primary p-2 my-2">
+              <span
+                *ngIf="loading"
+                class="spinner-border spinner-border-sm mr-1"
+              ></span>
+              Register
+            </button>
+          </div>
+        </form>
+
+        <a class="signup-a" routerLink="/login"
+          >Already register? Click to Login !!</a
+        >
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,100 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "poppins", "sans-serif";
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: url("../../assets/Images/img.jpg");
+  min-height: 100vh;
+}
+
+.wrapper {
+  width: 30%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  color: #fff;
+  border-radius: 10px;
+  padding: 30px 40px;
+}
+
+.wrapper h1 {
+  font-size: 36px;
+  text-align: center;
+}
+
+.wrapper .input-box {
+  width: 100%;
+  height: 50%;
+  margin: 30px 0;
+}
+
+.input-box input {
+  width: 100%;
+  height: 60%;
+  background: skyblue;
+  border: none;
+  color: #f90808;
+  outline: none;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 40px;
+  font-size: 20px;
+  padding: 15px;
+}
+
+.wrapper button {
+  width: 100%;
+  height: 35px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+
+.wrapper .register {
+  font-size: 15px;
+  text-align: center;
+  margin-top: 20px 0px 15px;
+}
+
+.reg-link {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.card {
+  border: none;
+  width: 500px;
+  padding: 40px;
+  position: absolute;
+  top: 55%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: hsla(205, 46%, 30%, 1);
+  background: linear-gradient(
+    90deg,
+    hsla(205, 46%, 30%, 1) 0%,
+    hsla(260, 29%, 36%, 1) 100%
+  );
+}
+.card label h1,
+h6 {
+  color: #fff;
+}
+label {
+  color: #fff;
+}
+.signup-a {
+  color: #fff;
+  margin-top: 10px;
+}

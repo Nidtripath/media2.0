@@ -1,0 +1,74 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    </head>
+    
+<body bgcolor="#111112;">
+
+<div id="live" class="bg-img">
+<img class="del-logo" src="../../assets/Images/deloitte_logo.svg" width="10%" height="10%">
+
+<img class="obs-logo" *ngIf="!this.wsService.broadcast" src="../../assets/Images/obs_logo2.PNG" width="6%" height="6%" (click)="obsWebSocketConnect()">
+<img class="obs-logo" *ngIf="this.wsService.broadcast" src="../../assets/Images/obs_logo1.PNG" width="6%" height="6%" (click)="obsWebSocketConnect()">
+<div class="container">
+    
+    <div class="outer-container">
+        
+        <img [ngClass]="this.firstTeamLogo == ''? 'rem-img' : 't-logo'" src={{this.firstTeamLogo}} alt="team1" width="30%" height="30%">
+        
+    <div class = 'sm-container1'>
+        
+        
+        <div class="tName"><p class="name">{{this.wsService.battingTeam == ''?this.firstTeamName: this.wsService.battingTeam}}</p></div>
+        <div class="player-pic">
+        <img src="../../assets/Images/player.svg" width="100%" height="100%">
+        </div>
+        <div class="player-stats">
+            <div class="batsman-top">
+                <div class="inner-div">
+                <div>{{this.wsService.striker}}</div>
+                <div>Batter*</div>
+                </div>
+            </div>
+            <div>
+                <div>Run scored {{this.wsService.strikerRuns}}</div>
+                <div>Balls played {{this.wsService.strikerBalls}}</div>
+            </div>
+
+        </div>
+    </div>
+    <span class="versus"><p class="v-text">V/S</p></span>
+    
+    <div class = 'sm-container2'>
+        <div class="tName"><p class="name">{{this.wsService.bowlingTeam == ''?this.secondTeamName: this.wsService.bowlingTeam}}</p></div>
+        <div class="player-pic">
+            <img src="../../assets/Images/player.svg" width="100%" height="100%">
+        </div>
+        <div class="player-stats">
+            <div class="batsman-top">
+                <div class="inner-div">
+                <div>{{this.wsService.bowlerName}}</div>
+                <div>Bowler</div>
+            </div>
+            </div>
+
+            <div>
+                <div>Overs Bowled {{this.wsService.bowlerOver}}.{{this.wsService.bowlerBall}}</div>
+                <div>Wicket taken {{this.wsService.bowlerWickets}}</div>
+            </div>
+
+        </div>
+        
+    </div>
+    <img [ngClass]="this.secondTeamLogo == ''? 'rem-img' : 't-logo2'" src={{this.secondTeamLogo}} alt="team2" width="30%" height="30%">
+    <!-- <p>hello</p> -->
+</div>
+
+
+</div>
+<!-- <div>hello</div> -->
+</div>
+<app-tticker></app-tticker>
+<!-- </div> -->
+</body>
+</html>

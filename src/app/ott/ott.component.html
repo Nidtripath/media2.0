@@ -1,0 +1,12 @@
+<body>
+<div class="screen">
+    <div class="tags">
+        <a class="active" (click)="toggle('home')">Home</a>
+        <a (click)="toggle('rent')">Rent</a>
+    </div>
+    <div class="tiles">Bullets</div>
+</div>
+
+<div *ngif="showDiv['rent']">RENT</div>
+<div *ngif="showDiv['home']">HOME</div>
+</body> 

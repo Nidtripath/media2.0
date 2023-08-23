@@ -1,0 +1,32 @@
+<head>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.0/shaka-player.ui.js"></script>
+</head>
+<body>
+  <div class="vid-tiles">
+    <div class="bullet" *ngFor="let video of this.bannerData">
+      <div (click)="playVideo(video)">
+        <!-- <img id="vids" class="banner-img" src="{{video.mediaBannerUrl}}" (click)="setVideoUrl(video)"> -->
+        <img
+          id="vids"
+          class="banner-img"
+          src="{{ this.mediaBannerURL }}"
+          (click)="setVideoUrl(video)"
+        />
+        <div class="ribbon" (click)="setVideoUrl(video)">
+          <div>
+            <img
+              src="assets/Images/InterviewPlay.png"
+              alt="Play"
+              (click)="setVideoUrl(video)"
+            />
+            <span class="card-text">{{ video.mediaName }}</span>
+          </div>
+        </div>
+        <!-- <div class="caption">
+          <div class="title">{{ video.mediaName }}</div>
+          <div class="description">{{ video.description }}</div>
+        </div> -->
+      </div>
+    </div>
+  </div>
+</body>

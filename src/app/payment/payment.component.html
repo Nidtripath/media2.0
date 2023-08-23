@@ -1,0 +1,109 @@
+<div class="payment-container">
+  <!-- Display success message when paymentSuccessful is true -->
+  <div *ngIf="paymentSuccessful" class="success-message">
+    Payment successful! Thank you for your purchase.
+  </div>
+  <h2>Payment Details</h2>
+  <form
+    class="payment-form"
+    (ngSubmit)="f.form.valid && onSubmit()"
+    name="form"
+    #f="ngForm"
+    novalidate
+  >
+    <div class="form-group">
+      <label>Card Number</label>
+      <input
+        type="text"
+        id="cardNumber"
+        class="form-control"
+        placeholder="Enter card number"
+        name="cardNumber"
+        [(ngModel)]="form.cardnumber"
+        required
+        minlength="12"
+        maxlength="12"
+        #cardnumber="ngModel"
+        [ngClass]="{
+          'is-invalid': f.submitted && cardnumber && cardnumber.errors
+        }"
+      />
+      <div *ngIf="f.submitted && cardnumber.errors" class="invalid-feedback">
+        <div *ngIf="cardnumber.errors['required']">Card Number is required</div>
+        <div *ngIf="cardnumber.errors['minlength']">
+          Card number must be at least 12 characters
+        </div>
+        <div *ngIf="cardnumber.errors['maxlength']">
+          Username must be at most 12 characters
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Expiration Date</label>
+      <input
+        type="text"
+        id="expiration"
+        class="form-control"
+        placeholder="MM/YYYY"
+        name="expiration"
+        [(ngModel)]="form.expiration"
+        required
+        #expiration="ngModel"
+        [ngClass]="{ 'is-invalid': f.submitted && expiration.errors }"
+      />
+      <div *ngIf="f.submitted && expiration.errors" class="invalid-feedback">
+        <div *ngIf="expiration.errors['required']">Expiry Date is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>CVV</label>
+      <input
+        type="text"
+        id="cvv"
+        class="form-control"
+        placeholder="Enter CVV"
+        name="cvv"
+        #cvv="ngModel"
+        [(ngModel)]="form.cvv"
+        required
+        minlength="3"
+        maxlength="3"
+        [ngClass]="{ 'is-invalid': f.submitted && cvv.errors }"
+      />
+      <div *ngIf="f.submitted && cvv.errors" class="invalid-feedback">
+        <div *ngIf="cvv.errors['required']">CVV is required</div>
+        <div *ngIf="cvv.errors['minlength']">
+          CVV must be at least 3 characters
+        </div>
+        <div *ngIf="cvv.errors['maxlength']">
+          Username must be at most 3 characters
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Cardholder Name</label>
+      <input
+        type="text"
+        id="name"
+        class="form-control"
+        placeholder="Enter cardholder name"
+        name="name"
+        #cardholdername="ngModel"
+        [(ngModel)]="form.cardholdername"
+        required
+        [ngClass]="{ 'is-invalid': f.submitted && cardholdername.errors }"
+      />
+      <div
+        *ngIf="f.submitted && cardholdername.errors"
+        class="invalid-feedback"
+      >
+        <div *ngIf="cardholdername.errors['required']">
+          Fullname is required
+        </div>
+      </div>
+    </div>
+    <div class="price">Final Payment {{ selectedPayVideo.price }}</div>
+    <div class="description">Video Name {{ selectedPayVideo.mediaName }}</div>
+    <button type="submit" class="btn btn-primary">Pay</button>
+  </form>
+</div>

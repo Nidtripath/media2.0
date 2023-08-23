@@ -1,0 +1,181 @@
+
+
+.del-logo {
+    z-index: 999;
+    width: fit-content;
+}
+
+.obs-logo {
+    z-index: 999;
+    position: absolute;
+    right: 3%;
+    top: 4%;
+    width: fit-content;
+}
+
+.rem-img {
+    display: none;
+}
+
+.pol {
+    text-align: center;
+}
+
+.bg-img {
+    background-image: url('../../assets/Images/stadium.svg');
+    background-repeat: no-repeat;
+    /* background-attachment: fixed; */
+    background-size: contain;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    height: 104vh;
+    overflow: hidden;
+    }
+
+.body {
+    background-color: aqua;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 4vh;
+    font-size: 4vh;
+    line-height: 4vh;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.left-rectangle {
+    height: 100%;
+    width: 10%;
+    background: linear-gradient(0deg, rgba(244, 8, 8, 0.8), rgba(242, 10, 10, 0.8)), #53565A;
+   
+}
+
+.outer-container {
+    position: relative;
+    display: flex;
+    justify-content: space-around;
+    height: 100%;  
+    color: white;  
+    width: 80%;
+}
+
+.t-logo {
+    width: fit-content; 
+    position: absolute;
+    top: -10%;
+    left: 12%;
+    z-index: 9999;
+}
+
+.t-logo2 {
+    width: fit-content;
+    position: absolute;
+    top: -10%;
+    right: 12%;
+    z-index: 9999;
+}
+
+.container {
+    position: absolute;
+    display: flex;
+    justify-content: space-around;
+    top: 10%;
+    width: 100%;
+    height: 60%;  
+    color: white;  
+}
+
+
+
+.v-text {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 3vh;
+    font-size: 4vh;
+    line-height: 3vh;
+    letter-spacing: 0.22em;
+    color: #FFFFFF;
+}
+
+.versus {
+    position: absolute;
+    top: 20%;
+}
+
+.sm-container1 {
+    position: relative;
+    width: 25%;
+    height: 80%;
+    margin-left: 10%;
+    top: 20%;
+    background: rgba(10, 10, 9, 0.53);
+    
+}
+
+.sm-container2 {
+    position: relative;
+    width: 25%;
+    height: 80%;
+    margin-right: 10%;
+    top: 20%;
+    background: rgba(10, 10, 9, 0.53);
+}
+
+.tName {
+    position: relative;
+    top: 0%;
+    width: 100%;
+    height: 8%;
+    text-align: center;
+}
+
+.name {
+    margin-top: 1%;
+    width: 100%;
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: 5vh;
+    font-size: 5vh;
+    line-height: 5vh;
+    letter-spacing: 0.02em;
+    color: #FFFFFF;
+}
+
+.player-stats {
+    width: 100%;
+    height: 30%;
+    bottom: 0%;
+    text-align: center;
+}
+
+.batsman-top {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.inner-div {
+    width: 80%;
+    
+}
+
+.outer-pStats {   
+    text-align: center;
+}
+
+.player-pic {
+    position: relative;
+    width: 80%;
+    height: 60%;
+    top: 1%;
+    left: 8%;
+    filter: drop-shadow(0px -10px 70px rgba(247, 247, 247, 0.12));
+}
+
+.text {
+    position: relative;
+    
+}

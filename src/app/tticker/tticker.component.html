@@ -1,0 +1,209 @@
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+
+<div class="rectangle">
+    <div class="column1">
+
+      <span class="row1">
+        <span class="span-mid">{{this.wsService.bowlerName}}</span>
+        <span class="span-mid-srun">
+          <span class="span-mid">{{this.wsService.bowlerOver}}.{{this.wsService.bowlerBall}}</span>
+          <span class="span-mid">{{this.wsService.bowlerEconomy}}</span>
+        </span>
+      </span>
+      
+      <span class="row3">
+        <span class="row3-runs">{{this.wsService.totalScore}} - {{this.wsService.totalWicket}}</span>
+        <span class="row3-overs">{{this.wsService.currentOvers}}.{{this.wsService.currentBall}} Overs</span>
+      </span>
+      
+        <span class="row3">
+          <div class="polygon"></div>
+          <span class="span-mid">{{this.wsService.striker}}</span>
+          <span class="span-mid-srun">
+            <span class="span-mid">{{this.wsService.strikerRuns}} runs</span>
+            <span class="span-mid">{{this.wsService.strikerBalls}} balls</span>
+          </span>
+        </span>
+    </div>
+    <div class="column2">
+        <span class="row4">
+          
+          <div
+                    *ngFor="
+                      let item of this.wsService.ballLogs;
+                      let index = index
+                    "
+                    class="col-1 overLogs_new"
+                  >
+                  <div class="ball-container">
+                    <div
+                      class="row-score overLogs"
+                      [ngClass]="{
+                        towlog: wsService.ballLogs[index].is_two_runs === true,
+                        fourlog:
+                          this.wsService.ballLogs[index].is_four_runs === true ||
+                          this.wsService.ballLogs[index].is_four_bye_runs ===
+                            true,
+                        sixlog:
+                          wsService.ballLogs[index].is_six_runs === true ||
+                          this.wsService.ballLogs[index].is_six_bye_runs === true,
+                        wicketlog:
+                          this.wsService.ballLogs[index].isWicket === true,
+                        jackpotlog:
+                          this.wsService.ballLogs[index].is_jackpot_ball === true,
+                        fhnormal: this.wsService.ballLogs[index].is_freeHit,
+                        wideNoBallLog:
+                          wsService.ballLogs[index].is_wide_ball === true ||
+                          this.wsService.ballLogs[index].is_no_ball === true ||
+                          this.wsService.ballLogs[index].is_Batsman_retd ===
+                            true ||
+                          this.wsService.ballLogs[index].is_leg_bye_run ===
+                            true ||
+                          this.wsService.ballLogs[index].is_bye_run === true
+                      }"
+                    >
+                      <span
+                        [ngClass]="{
+                          towlabel:
+                            this.wsService.ballLogs[index].is_two_runs === true
+                        }"
+                        *ngIf="
+                          !this.wsService.ballLogs[index].isWicket &&
+                          !this.wsService.ballLogs[index].is_wide_ball &&
+                          !this.wsService.ballLogs[index].is_no_ball
+                        "
+                        >{{
+                          this.wsService.ballLogs[index].run +
+                            this.wsService.ballLogs[index].extra_run
+                        }}</span
+                      >
+                      <span
+                        [ngClass]="{
+                          towlabel:
+                            this.wsService.ballLogs[index].is_two_runs === true
+                        }"
+                        *ngIf="
+                          (this.wsService.ballLogs[index].is_wide_ball ||
+                            this.wsService.ballLogs[index].is_no_ball) &&
+                          !this.wsService.ballLogs[index].isWicket
+                        "
+                        >{{ this.wsService.ballLogs[index].run }}</span
+                      >
+                      <span
+                        [ngClass]="{
+                          towlabel:
+                            this.wsService.ballLogs[index].is_two_runs === true
+                        }"
+                        *ngIf="
+                          this.wsService.ballLogs[index].isWicket &&
+                          this.wsService.ballLogs[index].run > 0
+                        "
+                      >
+                        {{ this.wsService.ballLogs[index].run }}W
+                      </span>
+                      <span
+                        [ngClass]="{
+                          towlabel:
+                            this.wsService.ballLogs[index].is_two_runs === true
+                        }"
+                        *ngIf="
+                          this.wsService.ballLogs[index].isWicket &&
+                          this.wsService.ballLogs[index].run == 0
+                        "
+                      >
+                        W
+                      </span>
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="this.wsService.ballLogs[index].is_Batsman_retd"
+                    >
+                      RTD
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="
+                        this.wsService.ballLogs[index].is_jackpot_ball ||
+                        (this.wsService.ballLogs[index].is_jackpot_ball &&
+                          this.wsService.ballLogs[index].isWicket)
+                      "
+                    >
+                      JK
+                  </div>
+                    <div
+                      class="expt"
+                      *ngIf="this.wsService.ballLogs[index].is_no_ball"
+                    >
+                      NB
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="this.wsService.ballLogs[index].is_freeHit"
+                    >
+                      FH
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="this.wsService.ballLogs[index].is_leg_bye_run"
+                    >
+                      LB
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="this.wsService.ballLogs[index].is_bye_run"
+                    >
+                      BYE
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="
+                        this.wsService.ballLogs[index].isWicket &&
+                        this.wsService.ballLogs[index].is_wide_ball
+                      "
+                    >
+                      OUT
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="
+                        this.wsService.ballLogs[index].isWicket &&
+                        !this.wsService.ballLogs[index].is_wide_ball &&
+                        !this.wsService.ballLogs[index].is_no_ball
+                      "
+                    >
+                      OUT
+                    </div>
+                    <div
+                      class="expt"
+                      *ngIf="
+                        !this.wsService.ballLogs[index].isWicket &&
+                        this.wsService.ballLogs[index].is_wide_ball
+                      "
+                    >
+                      WD
+                    </div>
+                    </div>
+                  </div>
+                
+        </span>
+        <span class="row5">
+          <div>{{this.wsService.battingTeam}}</div>
+        </span>
+
+        <span class="row3">
+          <div class="no-polygon"></div>
+          <span class="span-mid">{{this.wsService.nonstriker}}</span>
+
+          <span class="span-mid-srun">
+            <span class="span-mid">{{this.wsService.nonStrikerRuns}} runs</span>
+            <span class="span-mid">{{this.wsService.nonStrikerBalls}} balls</span>
+          </span>
+        </span>
+
+    </div>
+</div>
+</html>

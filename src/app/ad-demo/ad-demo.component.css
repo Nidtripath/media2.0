@@ -1,0 +1,11 @@
+#jwplayer-container2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: none; /* Initially hide the ad container */
+    opacity: 1; /* Set initial opacity to fully visible */
+    transition: opacity 5s ease-in-out; /* Transition for opacity change */
+}

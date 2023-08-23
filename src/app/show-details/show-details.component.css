@@ -1,0 +1,66 @@
+.vid-area {
+  width: 80%;
+  height: 60vh;
+  float: right;
+  /* background-color: aqua; */
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.caption {
+  font-family: "Poppins";
+  font-weight: 600;
+  font-size: 24px;
+  color: #220707;
+}
+
+.video-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.detail-pic {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+video {
+  width: 100%;
+  height: auto;
+}
+
+.video-info {
+  /* background-color: #f4f4f4; */
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.video-title {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.video-description {
+  font-size: 1rem;
+  color: #555;
+}
+
+.btn {
+  font-size: 1.2rem;
+  background-color: skyblue;
+  transition-duration: 0.4s;
+  color: black;
+  border: 2px solid #4caf50; /* Green */
+}
+
+.btn:hover {
+  background-color: #4caf50; /* Green */
+  color: white;
+}

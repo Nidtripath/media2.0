@@ -1,0 +1,14 @@
+.tags {
+    height: 30%;
+    background-color: aqua;
+}
+
+.tiles {
+    height: 70%;
+    background-color: bisque;
+}
+
+.screen {
+    height: fit-content;
+    background-color: blueviolet;
+}

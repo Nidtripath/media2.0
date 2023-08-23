@@ -1,0 +1,52 @@
+.nav {
+  display: inline-flex;
+}
+
+.logo {
+  float: right;
+  /* max-width: 100%; 
+    size: 100%; 
+    height: auto;   */
+  width: 30px;
+  border-radius: 50%;
+  margin-top: 1%;
+  margin-right: 10px;
+}
+
+.bx {
+  float: right;
+}
+
+.nav ul {
+  display: inline-flex;
+  list-style-type: none;
+  margin: 0%;
+  padding: 0%;
+  padding-top: 4%;
+}
+
+.nav li {
+  padding-left: 10%;
+  font-size: large;
+}
+
+nav a {
+  text-decoration: none;
+}
+
+body {
+  background-color: black;
+  color: white;
+}
+
+.heading {
+  color: white;
+}
+
+a:link {
+  color: white;
+}
+
+a:hover {
+  color: orange;
+}

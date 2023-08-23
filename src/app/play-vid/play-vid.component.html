@@ -1,0 +1,28 @@
+<head>
+  <title>Encrypted Video Playback</title>
+  <!-- <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.0/controls.css"> -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.2.0/shaka-player.ui.js"></script> -->
+  <base href="/" />
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.1.1/shaka-player.compiled.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/shaka-player/3.1.1/shaka-player.compiled.js"></script>
+  <script src="runtime.js" defer></script>
+  <script src="polyfills.js" defer></script>
+  <script src="styles.js" defer></script>
+  <script src="scripts.js" defer></script>
+  <script src="vendor.js" defer></script>
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <div class="video-container">
+    <video
+      controls
+      id="video"
+      title="{{ this.selectedVideo.mediaName }}"
+    ></video>
+    <div class="video-info">
+      <!-- <button class="btn"> Rent </button> -->
+      <h2 class="video-title">Name: {{ this.selectedVideo.mediaName }}</h2>
+      <h4 class="video-description">Price {{ this.selectedVideo.price }}</h4>
+    </div>
+  </div>
+</body>
